@@ -12,23 +12,23 @@ void printALL (double *base , int arraySize)
       }
 double maxArray( double *base, int arraySize )
      {
-          double maxarray;
-        for (int i=0 ; i< arraySize ;++i)
+          double maxarray= base[0];
+        for (int i=1 ; i< arraySize ;++i)
              {
-               maxarray=base[i];
-                 if (base[i]< base[i+1])
-                 {maxarray=base[i+1];}
+            
+                 if (base[i]>maxarray)
+                 {maxarray=base[i];}
              }
         return maxarray ;
      }
 
 double minArray( double *base, int arraySize )
-     { double minarray ;
-          for (int i=0 ; i< arraySize ;++i)
+     { double minarray= base[0] ;
+          for (int i=1 ; i< arraySize ;++i)
             {
-               minarray=base[i];
-              if (base[i]>base[i+1])
-               {minarray=base[i+1];}
+    
+              if (base[i]<minarray)
+               {minarray=base[i];}
             }
          return minarray ;
  
@@ -36,7 +36,7 @@ double minArray( double *base, int arraySize )
 
 
 double meanArray( double *base , int arraySize )
-      { int sum =0 ;
+      { double sum =0 ;
           for (int k=0 ; k< arraySize ; ++k)
              {
               sum= sum+ base[k];
@@ -46,11 +46,12 @@ double meanArray( double *base , int arraySize )
 
 
 double varianceArray( double *base, int arraySize )
-       {
+       {  double sum=0;
          for ( int j=0 ; j<arraySize ; ++j )
       {
-double var = (mathematics :: square  ( meanArray (&base[0], arraySize) -  base [j])     )/ arraySize ;
+ sum =sum + (mathematics :: square  ( meanArray (base, arraySize) -  base [j])     );
       }
+      return sum /arraySize ;
         } 
 
 
