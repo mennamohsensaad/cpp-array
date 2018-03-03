@@ -67,6 +67,77 @@ int countCharacter( char *basePointer , int size , char query )
 
     }
     return count ;
+
+struct DoubleArray
+{ double *base ;
+int size ;
+};
+struct CharacterArray 
+{ char *base ;
+int size ;
+};
+
+void printAll( DoubleArray array )
+{
+    for (int i=0 ; i< array.size ; ++i)
+        {std::cout<<array.base[i] <<",";}
+}
+
+double maxArray( DoubleArray array )
+{
+  double maxarray= array.base[0];
+        for (int i=1 ; i< array.size ;++i)
+             {
+            
+                 if (array.base[i]>maxarray)
+                 {maxarray=array.base[i];}
+             }
+        return maxarray ;
+}
+
+double minArray( DoubleArray array )
+{
+double minarray= array.base[0] ;
+          for (int i=1 ; i< array.size ;++i)
+            {
+    
+              if (array.base[i]<minarray)
+               {minarray=array.base[i];}
+            }
+         return minarray ;
+ 
+}
+
+double meanArray( DoubleArray array )
+{
+   double sum =0 ;
+          for (int k=0 ; k< array.size ; ++k)
+             {
+              sum= sum+ array.base[k];
+             }
+         return sum/array.size ;
+}
+
+double varianceArray( DoubleArray array )
+{
+  double sum=0;
+         for ( int j=0 ; j<array.size ; ++j )
+      {
+ sum =sum + (mathematics :: square  ( meanArray (array.base, array.size) -  arry.base [j])     );
+      }
+      return sum /array.size ;
+}
+
+
+
+
+
+
+
+
+
+
+
 } 
 
 

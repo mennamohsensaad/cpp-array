@@ -13,6 +13,10 @@ int main( int argc , char **argv )
         int size = 0;
         double *ecgArray = helpers::getECG( argv[1] , size );
 
+
+ ecg = ecg::ECGArray ( ecgArray,size )
+ stats = ecg::Statistics ( analyzeECG( ecg ) )
+
         double average = 0, standardDev = 0, max = 0 , min = 0;
         ecg:: analyzeECG( &ecgArray[0] , size ,average , standardDev , max , min );
 
@@ -24,4 +28,5 @@ int main( int argc , char **argv )
         return 0 ;
         
     }
+
 }

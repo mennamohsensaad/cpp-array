@@ -7,9 +7,14 @@ int main( int argc , char **argv )
 {
     double a = 0, b = 0, c = 0;
     
+    mathematics::Triangle t{ 0 , 0 , 0 };
+    // for struct
+
     if( argc == 1 )
     {
         std::cin >> a >> b >> c;
+std::cin >> t.a >> t.b >> t.c;
+//for sttruct
     }
     else if( argc == 4 )
     {
@@ -24,6 +29,8 @@ int main( int argc , char **argv )
     }
 
     std::cout << mathematics::heron ( a , b , c ) << std::endl;
+    /*std::cout << mathematics::heron( t ) << std::endl;*/ // sor struct
+
     return 0; // Success Code!
 }
 

@@ -28,6 +28,21 @@ double calculation(double a, double b, char operation)
     {
         return 0;
     }
+
+    struct Triangle
+{
+double a;
+double b;
+double c;
+};
+double heron( Triangle t )
+{
+    
+double s= (t.a+t.b+t.c)/2 ;
+return sqrt(s * (s -t. a) * (s - t.b) * (s -t. c));
+
+}
+
  
 }
 
